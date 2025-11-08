@@ -1,16 +1,66 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Веб-разработка в Сен-Назере" description="Личный сайт-портфолио веб-разработчика в Сен-Назере, Франция. Создаю современные сайты для локального бизнеса.">
+  <!-- Hero секция -->
+  <section class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Веб-разработка в Сен-Назере</h1>
+      <p class="text-xl md:text-2xl mb-8">Создаю быстрые и современные сайты для вашего бизнеса</p>
+      <a href="#contact" class="bg-white text-blue-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">Связаться со мной</a>
+    </div>
+  </section>
+
+  <!-- Избранные проекты -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Избранные проекты</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ProjectCard
+          title="Сайт для ресторана"
+          imageUrl="https://via.placeholder.com/400x300?text=Ресторан"
+          description="Современный сайт для местного ресторана с онлайн-меню и бронированием."
+          url="/portfolio/project-one"
+        />
+        <ProjectCard
+          title="Интернет-магазин"
+          imageUrl="https://via.placeholder.com/400x300?text=Магазин"
+          description="Полнофункциональный интернет-магазин с интеграцией платежей."
+          url="/portfolio/project-two"
+        />
+        <ProjectCard
+          title="Блог компании"
+          imageUrl="https://via.placeholder.com/400x300?text=Блог"
+          description="Корпоративный блог с системой управления контентом."
+          url="#"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Последние статьи -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Последние статьи</h2>
+      <div class="max-w-2xl mx-auto space-y-4">
+        <a href="/blog/first-post" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Мой первый пост в блоге</h3>
+          <p class="text-gray-600">Краткое описание первой статьи в блоге о веб-разработке.</p>
+          <span class="text-sm text-gray-500 mt-2 block">8 ноября 2025</span>
+        </a>
+        <a href="#" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Как выбрать фреймворк для проекта</h3>
+          <p class="text-gray-600">Обзор популярных фреймворков и советы по выбору.</p>
+          <span class="text-sm text-gray-500 mt-2 block">5 ноября 2025</span>
+        </a>
+        <a href="#" class="block bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Советы по оптимизации сайта</h3>
+          <p class="text-gray-600">Практические рекомендации по улучшению производительности.</p>
+          <span class="text-sm text-gray-500 mt-2 block">1 ноября 2025</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

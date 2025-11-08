@@ -1,0 +1,23 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('portfolio');
+---
+
+<MainLayout title="Мои работы - Портфолио" description="Посмотрите на мои проекты веб-разработки в Сен-Назере.">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-12">Мои работы</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          imageUrl={project.data.imageUrl}
+          description={project.data.description}
+          url={`/portfolio/${project.slug}`}
+        />
+      ))}
+    </div>
+  </div>
+</MainLayout>
